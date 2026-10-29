@@ -1,0 +1,134 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: max(32px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    margin: 0 0 8px;
+}
+
+p {
+    color: #f1f1ff;
+    font-size: 16px;
+    margin: 0 0 16px;
+}
+
+.install-button { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.55); }
+.install-button[hidden] { display: none; }
+
+.task-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.task-form {
+    display: flex;
+    gap: 10px;
+}
+
+#taskInput {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:focus-visible, input:focus-visible { outline: 3px solid #fbbf24; outline-offset: 2px; }
+button:active { transform: translateY(1px); }
+
+.task-form button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+#taskList {
+    max-width: 500px;
+    margin: 25px auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 14px;
+    background: white;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    color: #333333;
+    overflow-wrap: anywhere;
+}
+
+#taskList li button {
+    flex-shrink: 0;
+    background: #ef4444;
+    padding: 8px 12px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 30px 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .task-card {
+        padding: 14px;
+    }
+
+    .task-form {
+        flex-direction: column;
+    }
+
+    .task-form button {
+        width: 100%;
+    }
+
+    #taskList li {
+        padding: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    button { transition: transform .12s ease, background-color .12s ease; }
+}

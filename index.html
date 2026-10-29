@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="A simple app to manage daily tasks, online or offline.">
+
+    <title>My Daily Tasks</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <header class="app-header">
+        <h1>My Daily Tasks</h1>
+        <p>Your tasks, ready whenever you are.</p>
+        <button id="installButton" class="install-button" type="button" hidden>Install app</button>
+    </header>
+
+    <main class="task-card">
+        <div class="task-form">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you need to do?"
+                aria-label="New task"
+                autocomplete="off"
+            >
+
+            <button id="addTaskButton" type="button">+ Add Task</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
